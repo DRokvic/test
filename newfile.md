@@ -1,9 +1,21 @@
+# Big Title
+## Medium Title
+### Small Title
+Normal text
+
+**bold text**
+
+*cursive* 
+
+_under_
+
+```ruby
 str(InsectSprays)
 
-#InsectSprays is a simple count of insects found depending on a type of spray on cultivated land.
-#For continuous data, best to actually show it.
+# InsectSprays is a simple count of insects found depending on a type of spray on cultivated land.
+# For continuous data, best to actually show it.
 
-#A quick and easy visualization is a bar graph ## always use the help function (eg stat_summary) to understand#
+# A quick and easy visualization is a bar graph ## always use the help function (eg stat_summary) to understand#
 ggplot(InsectSprays, aes(x=spray, y=count)) +
   stat_summary(fun = mean, geom = "bar") +
   stat_summary(fun.data = mean_se, geom = "errorbar", width=.1, size=0.4) +
@@ -56,16 +68,16 @@ insect.plot <- ggplot(InsectSprays, aes(x=spray, y=count)) +
 insect.plot
 
 
-#Saving graphs
+# Saving graphs
 setwd("C:/Users/drokvic/Documents/Dunja/Courses/Statistics")
 #Either via clicking on "export", BUT: then, no influence on any parameters
 
-#Suggested:
+# Suggested:
 ggsave(insect.plot, file="Fig1.pdf", width=20, height=20, units="cm", useDingbats=F)
 
 
-#I would generally advise saving graphs in PDF, this is much more practical and provides better quality.
-#You can also modify your graph easily with a vector drawing software like Inkscape.
+# I would generally advise saving graphs in PDF, this is much more practical and provides better quality.
+# You can also modify your graph easily with a vector drawing software like Inkscape.
 
 #You can also combine plots !
 f1 <-plot_grid(orange.plot, air.plot, titanic.plot, insect.plot, ncol=2, labels=c("A","B","C","D"), axis =c("l", "l", "l", "l"), align="v")
@@ -74,3 +86,4 @@ f1 <-plot_grid(orange.plot, air.plot, titanic.plot, insect.plot, ncol=2, labels=
 save_plot("Fig1.pdf", f1, base_height=20, base_width=20, units="cm")
 
 save.image("recitation1_final.RData")
+```
